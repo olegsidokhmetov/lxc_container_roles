@@ -1,0 +1,13 @@
+---
+- hosts: Server-52
+  gather_facts: false
+  vars_files:
+  - /etc/ansible/roles/lxd_qs/vars/main.yml
+  - /etc/ansible/roles/lxd_qs/defaults/main.yml
+  tasks:
+
+    - name: Creating Cantainer Jitsi with IP 192.168.100.120
+      include: Cantainer_Jitsi_192.168.100.120.yaml
+
+    - name:  Creating Cantainer Nginx with IP  192.168.100.121
+      include: Cantainer_Nginx_192.168.100.121.yaml
